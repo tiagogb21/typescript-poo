@@ -12,7 +12,7 @@ export default class Validator {
     this.data = data;
   }
 
-  isValid() {
+  verify() {
     new NameValidator(this.data.name).isValidName;
     new EmailValidator(this.data.email).isValidEmail;
     new AgeValidator(this.data.age, 16).isValidAge;
