@@ -1,7 +1,8 @@
-import { IUser } from "../protocols/user.interface";
+import { IUser } from "../interfaces/user.interface";
 import AgeValidator from "../validators/users/age-validator";
 import EmailExists from "../validators/users/email-validator";
 import NameValidator from "../validators/users/name-validator";
+import PasswordValidator from "../validators/users/password-validator";
 
 const MIN_AGE = 16;
 
@@ -16,5 +17,6 @@ export default class Validator {
     new AgeValidator(this.data.age, MIN_AGE).isValidAge();
     new EmailExists(this.data.email).isValidEmail();
     new NameValidator(this.data.name).isValidName();
+    new PasswordValidator(this.data.password).isValidPassword();
   }
 }

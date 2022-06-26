@@ -19,7 +19,7 @@ export default class NameValidator {
     if(
       !this.nameValue
       || typeof this.nameValue !== 'string'
-      || this.nameValue.split('').filter((letter) => letters.indexOf(letter) === -1)
+      || !this.nameValue.split('').every((item) => letters.indexOf(item) > -1)
       || this.nameValue.trim().length < MIN_CHARS
     ) {
       throw new Error(this.errorMessage);

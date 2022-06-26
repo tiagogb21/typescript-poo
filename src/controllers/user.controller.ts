@@ -1,5 +1,5 @@
 import {Response, Request, NextFunction} from 'express';
-import {IUser} from '../protocols/user.interface';
+import {IUser} from '../interfaces/user.interface';
 
 interface Service {
   create(data: Omit<IUser, 'id'>): IUser

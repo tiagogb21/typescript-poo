@@ -1,1 +1,1 @@
-import {IUser} from '../protocols/user.interface';
+import {IUser} from '../interfaces/user.interface';

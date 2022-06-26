@@ -1,5 +1,5 @@
 import { ResultSetHeader } from 'mysql2';
-import { IUser, IModel } from '../protocols/user.interface';
+import { IUser, IModel } from '../interfaces/user.interface';
 import connection from './connection';
 
 export default class Model implements IModel {

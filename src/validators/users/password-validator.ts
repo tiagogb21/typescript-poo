@@ -15,7 +15,7 @@ export default class PasswordValidator {
     return '';
   }
 
-  isValidAge() {
+  isValidPassword() {
     if(!this.password || this.password.length < MIN_PASSWORD)
     throw new Error(this.errorMessage)
   }

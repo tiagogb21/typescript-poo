@@ -1,5 +1,5 @@
 import { tokenAdminValidator } from "../helper/token-validator";
-import { IUser } from "../protocols/user.interface";
+import { IUser } from "../interfaces/user.interface";
 import Validator from "../middlewares/user.middleware";
 
 interface Model {

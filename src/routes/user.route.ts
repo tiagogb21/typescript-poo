@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { Response, Request, NextFunction } from 'express';
 import Factory from '../factory/index';
-import { IUser } from '../protocols/user.interface';
+import { IUser } from '../interfaces/user.interface';
 import Validator from '../middlewares/user.middleware';
 
 interface Service {
@@ -11,9 +11,8 @@ interface Service {
 const userRouter = Router();
 
 const validator = ((req: Request, _res: Response, next: NextFunction) => {
-  const {name, age, email, role} = req.body;
-  const validator = new Validator({name, age, email, role});
-  console.log(validator.valid())
+  const {name, age, email, role, password} = req.body;
+  const validator = new Validator({name, age, email, role, password});
   validator.valid;
   next()
 });
