@@ -11,7 +11,7 @@ export default class EmailValidator {
     return this.email;
   }
 
-  set isValidEmail(data: string) {
+  isValidEmail() {
     if(!this.email) {
       throw new Error(this.errorMessage);
     }

@@ -13,8 +13,8 @@ export default class Validator {
   }
 
   valid(): void {
-    new AgeValidator(this.data.age, MIN_AGE).isValidAge;
-    new EmailExists(this.data.email).isValidEmail;
-    new NameValidator(this.data.name).isValidName;
+    new AgeValidator(this.data.age, MIN_AGE).isValidAge();
+    new EmailExists(this.data.email).isValidEmail();
+    new NameValidator(this.data.name).isValidName();
   }
 }

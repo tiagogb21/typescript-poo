@@ -16,7 +16,7 @@ export default class AgeValidator {
     return this.age;
   }
 
-  set isValidAge(age: number) {
+  isValidAge() {
     if(!this.age || this.age < this.minAge)
     throw new Error(this.errorMessage)
   }
