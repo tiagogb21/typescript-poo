@@ -3,6 +3,8 @@ import { AdminService, UserService } from '../services/user.service';
 import Model from '../models/user.model';
 import LogError from '../helper/log';
 
+// Designer pattern:
+// A factory organiza: "new Controller(new UserSerice(new Model()))"
 export default class Factory {
   userFactory() {
     const model = new Model();
