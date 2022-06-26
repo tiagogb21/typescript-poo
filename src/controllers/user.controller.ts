@@ -9,13 +9,10 @@ export default class UserController {
   constructor(private service: Service) {
     this.service = service;
   }
+
   async create(req: Request, res: Response, next: NextFunction) {
-    try {
       const user = await this.service.create(req.body);
-      return res.status(201).json({user})
-    } catch (error) {
-      next(error)
-    }
+      return res.status(201).json({ user });
   }
 }
 

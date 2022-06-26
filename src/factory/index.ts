@@ -15,7 +15,6 @@ export default class Factory {
     const model = new Model();
     const adminService = new AdminService(model);
     const adminController = new UserController(adminService);
-    
     return adminController;
   }
 }
