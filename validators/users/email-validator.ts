@@ -2,12 +2,13 @@ export default class EmailValidator {
   email: string;
   errorMessage: string;
 
-  constructor (
-    email: string,
-    errorMessage: string,
-  ) {
+  constructor (email: string) {
     this.email = email;
     this.errorMessage = 'Invalid email!';
+  }
+
+  get getEmailValue() {
+    return this.email;
   }
 
   set isValidEmail(data: string) {
