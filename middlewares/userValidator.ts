@@ -15,7 +15,7 @@ export default class Validator {
   isValid() {
     new NameValidator(this.data.name).isValidName;
     new EmailValidator(this.data.email).isValidEmail;
-    new AgeValidator(this.data.age).isValidAge;
+    new AgeValidator(this.data.age, 16).isValidAge;
   }
 
 }
