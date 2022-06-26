@@ -10,6 +10,6 @@ const userRouter = Router();
 
 const userController = new UserController();
 
-userRouter.get('/user', userController.getAll);
+userRouter.get('/user', UserController.getAll);
 
-userRouter.post('/user', new Validator(IUser).verify, userController.create)
+userRouter.post('/user', new UserController.create)
