@@ -4,6 +4,8 @@ import {AdminController, UserController} from './controllers/user.controller';
 
 const app = express();
 
+const PORT = 3000;
+
 app.use(express.json());
 
 app.post('/user', (req, res, next) => {
@@ -21,4 +23,10 @@ app.use((
   _next: NextFunction
 ) => {
   res.status(400).json({ error: err.message })
+})
+
+app.use(express.json());
+
+app.listen(PORT, () => {
+  console.log(`Listening on ${ PORT }`);
 })
