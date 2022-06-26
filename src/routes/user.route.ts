@@ -1,8 +1,5 @@
 import { Router } from 'express';
-
-import Controller from '../controllers/user.controller';
-import { UserService, AdminService } from '../services/user.service';
-import Validator from '../middlewares/user.middleware';
+import Factory from '../factory/index';
 import { IUser } from '../protocols/user.interface';
 
 interface Service {
@@ -11,10 +8,14 @@ interface Service {
 
 const userRouter = Router();
 
-const userController = new Controller(new UserService());
-userRouter.post('/user', Validator.verify(), userController.create)
+const factoryUser = new Factory().userFactory()
+userRouter.post('/user', (req, res, next) => {
+  factoryUser.create(req, res, next);
+})
 
-const adminController = new Controller(new AdminService());
-userRouter.post('/admin', Validator.verify(), adminController.create);
+const factoryAdmin = new Factory().adminFactory();
+userRouter.post('/admin', (req, res, next) => {
+  factoryAdmin.create(req, res, next);
+});
 
 export default userRouter;
