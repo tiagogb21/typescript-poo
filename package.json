@@ -1,0 +1,21 @@
+{
+  "name": "poo-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiagogb21/typescript-poo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiagogb21/typescript-poo/issues"
+  },
+  "homepage": "https://github.com/tiagogb21/typescript-poo#readme"
+}
