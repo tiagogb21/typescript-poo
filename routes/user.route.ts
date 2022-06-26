@@ -1,15 +1,22 @@
 import { Router } from 'express';
 
-import UserController from '../controllers/user.controller';
+import Controller from '../controllers/user.controller';
+import { UserService, AdminService } from '../service/user.service';
+import Validator from '../middlewares/user.middleware';
+import {IUser} from '../protocols/user.interface';
 
-import Validator from '../middlewares/user.middleware'
+interface Service {
+  create(data: Omit<IUser, 'id'>): IUser
+}
 
-import { IUser } from '../protocols/user.interface';
+console.log(new Validator())
 
 const userRouter = Router();
 
-const userController = new UserController();
+// const userController = new Controller(new UserService());
+// userRouter.post('/user', Validator.verify(), userController.create)
 
-userRouter.get('/user', UserController.getAll);
+// const adminController = new Controller(new AdminService());
+// userRouter.post('/admin', Validator.verify(), adminController.create);
 
-userRouter.post('/user', new UserController.create)
+export default userRouter;

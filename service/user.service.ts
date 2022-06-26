@@ -1,6 +1,6 @@
 import UserModel from '../models/user.model';
 import { IUser } from '../protocols/user.interface';
-import Validator from '../validators/users';
+import Validator from '../middlewares/user.middleware';
 
 export class UserService {
   model: UserModel;
@@ -8,23 +8,23 @@ export class UserService {
     this.model = new UserModel();
   }
   async create(data: Omit<IUser, 'id'>) {
-    new Validator(data).valid();
+    new Validator(data).verify();
     const user = await this.model.create(data);
     return user;
   }
 }
 
 export class AdminService {
-  model: Model;
+  model: UserModel;
   
   constructor() {
-    this.model = new Model();
+    this.model = new UserModel();
   }
 
-  async create(data: Omit<IUser, 'id'>, token: string) {
+  async create(data: Omit<IUser, 'id'>/* , token: string */) {
     new Validator(data).verify();
 
-    tokenAdminValidator(token);
+    // tokenAdminValidator(token);
     
     const admin = await this.model.create(data);
 
