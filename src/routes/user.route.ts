@@ -3,13 +3,11 @@ import { Router } from 'express';
 import Controller from '../controllers/user.controller';
 import { UserService, AdminService } from '../services/user.service';
 import Validator from '../middlewares/user.middleware';
-import {IUser} from '../protocols/user.interface';
+import { IUser } from '../protocols/user.interface';
 
 interface Service {
   create(data: Omit<IUser, 'id'>): IUser
 }
-
-console.log(new Validator())
 
 const userRouter = Router();
 
